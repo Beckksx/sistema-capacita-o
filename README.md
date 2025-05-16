@@ -1,1 +1,1 @@
-# sistema-capacita-o
+# sistemaCapacitacao
