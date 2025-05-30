@@ -145,13 +145,30 @@ public class ServidorPublico {
                 this.cpf = cpf;
         }
 
-        public double calcularSalarioHorasExtras (double horasTrabalhadas, double horasExtrasMensal, double horasExtrasQuinzenal, double  horasExtrasSemanal, double valorHora, int i) {
-                horasTrabalhadas = horasTrabalhadas + horasExtrasSemanal + horasExtrasQuinzenal + horasExtrasMensal;
-                double salarioMensal = salario + (horasTrabalhadas * valorHora);
-                this.horasExtras = salarioMensal;
-                return (salarioMensal);
+       // public double calcularSalarioHorasExtras (double horasTrabalhadas, double horasExtrasMensal, double horasExtrasQuinzenal, double  horasExtrasSemanal, double valorHora, int i) {
+        //        horasTrabalhadas = horasTrabalhadas + horasExtrasSemanal + horasExtrasQuinzenal + horasExtrasMensal;
+        //        double salarioMensal = salario + (horasTrabalhadas * valorHora);
+            //    this.horasExtras = salarioMensal;
+            //    return (salarioMensal);
+     //   }
+
+        public ServidorPublico(){};
+
+        public ServidorPublico (int matricula, String nome, String cargo){
+                this.matricula = matricula;
+                this.nome = nome;
+                this.cargo = cargo;
 
         }
+
+
+        public ServidorPublico (int matricula, String nome){
+                this.matricula = matricula;
+                this.nome = nome;
+                this.cargo = cargo;
+
+        }
+
 
         public double getHorasExtrasSemanal() {
                 return horasExtrasSemanal;
@@ -185,6 +202,17 @@ public class ServidorPublico {
                 }
                 return soma;
         }
+
+        public double calcularSalarioHorasExtras (double valorHoras, double ... horasTrabalhadas){
+                double salarioMensal = 0;
+                for (double valor : horasTrabalhadas) {
+                        salarioMensal = valor + valorHoras;
+                }
+                horasExtras = salarioMensal;
+                return(salarioMensal);
+        }
+
+
 
 
 }
