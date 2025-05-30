@@ -16,6 +16,22 @@ public class ServidorPublico {
         private String lotacao;
         private String email;
 
+        public double getHorasExtras() {
+                return horasExtras;
+        }
+
+        public void setHorasExtras(double horasExtras) {
+                this.horasExtras = horasExtras;
+        }
+
+        private double horasExtras;
+
+        private double horasExtrasSemanal;
+
+        private double horasExtrasQuinzenal;
+
+        private double horasExtrasMensal;
+
         public String getEmail() {
                 return email;
         }
@@ -23,6 +39,7 @@ public class ServidorPublico {
         public void setEmail(String email) {
                 this.email = email;
         }
+
 
         public String getLotacao() {
                 return lotacao;
@@ -127,4 +144,47 @@ public class ServidorPublico {
         public void setCpf(String cpf) {
                 this.cpf = cpf;
         }
+
+        public double calcularSalarioHorasExtras (double horasTrabalhadas, double horasExtrasMensal, double horasExtrasQuinzenal, double  horasExtrasSemanal, double valorHora, int i) {
+                horasTrabalhadas = horasTrabalhadas + horasExtrasSemanal + horasExtrasQuinzenal + horasExtrasMensal;
+                double salarioMensal = salario + (horasTrabalhadas * valorHora);
+                this.horasExtras = salarioMensal;
+                return (salarioMensal);
+
+        }
+
+        public double getHorasExtrasSemanal() {
+                return horasExtrasSemanal;
+        }
+
+        public void setHorasExtrasSemanal(double horasExtrasSemanal) {
+                this.horasExtrasSemanal = horasExtrasSemanal;
+        }
+
+        public double getHorasExtrasQuinzenal() {
+                return horasExtrasQuinzenal;
+        }
+
+        public void setHorasExtrasQuinzenal(double horasExtrasQuinzenal) {
+                this.horasExtrasQuinzenal = horasExtrasQuinzenal;
+        }
+
+        public double getHorasExtrasMensal() {
+                return horasExtrasMensal;
+        }
+
+        public void setHorasExtrasMensal(double horasExtrasMensal) {
+                this.horasExtrasMensal = horasExtrasMensal;
+        }
+
+        public double calcularNumeros (double... numeros){
+                double soma = 0;
+                for (double numero : numeros) {
+                        soma += numero;
+
+                }
+                return soma;
+        }
+
+
 }
