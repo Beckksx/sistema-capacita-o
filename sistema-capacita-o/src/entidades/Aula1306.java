@@ -95,5 +95,12 @@ public class Aula1306 {
         return sl;
     }
 
+    //lembrar ToString
+   // public String toString(){
+    //    return nome
+      //          +" ,R$ "
+        //        +String.format("%.2f", calcularSalarioLiquido());
+    //}
+
 
 }

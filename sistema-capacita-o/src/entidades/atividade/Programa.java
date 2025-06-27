@@ -1,8 +1,7 @@
 package aplicacao;
 
 import entidades.Aula1306;
-import entidades.Produto;
-import entidades.ServidorPublico;
+
 import java.util.Scanner;
 public class Programa {
     public static void main(String[] args) {
